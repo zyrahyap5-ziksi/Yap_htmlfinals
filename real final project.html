@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zyrah Angeline Grace Yap | Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F5F8F0;
+            color: #333333;
+            line-height: 1.7;
+        }
+
+        /* NAVIGATION */
+        .navbar {
+            background-color: #8DB600;
+            padding: 15px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+
+        .navbar a:hover {
+            background-color: #A3B18A;
+            color: #263323;
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 45px;
+            padding: 70px 8%;
+            background-color: white;
+            flex-wrap: wrap;
+        }
+
+        .hero img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 6px solid #A3B18A;
+        }
+
+        .hero-text {
+            max-width: 600px;
+        }
+
+        .hero-text h1 {
+            font-size: 38px;
+            color: #31551D;
+            margin: 8px 0;
+        }
+
+        .hero-text h3 {
+            color: #668000;
+            font-weight: normal;
+        }
+
+        .tagline {
+            color: #6B8E23;
+            font-style: italic;
+            margin: 12px 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #8DB600;
+            color: white;
+            text-decoration: none;
+            padding: 10px 22px;
+            border-radius: 25px;
+            margin-top: 10px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #668000;
+        }
+
+        .section {
+            padding: 45px 6%;
+        }
+
+        .section-title {
+            color: #31551D;
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        .light-section {
+            background-color: #EDF3E6;
+        }
+
+        .white-section {
+            background-color: white;
+        }
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 20px;
+            align-items: stretch;
+        }
+
+        .about-text {
+            padding: 10px;
+        }
+
+        .info-card {
+            background-color: #F5F8F0;
+            border: 1px solid #C5D2B8;
+            padding: 22px;
+            border-radius: 12px;
+        }
+
+        .info-card h3 {
+            color: #31551D;
+            margin-bottom: 12px;
+        }
+
+        ul.details {
+            padding-left: 20px;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .skill-card {
+            background-color: white;
+            border: 1px solid #D7E3CE;
+            border-radius: 12px;
+            padding: 22px 15px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px #D7E3CE;
+        }
+
+        .skill-icon {
+            display: inline-flex;
+            width: 55px;
+            height: 55px;
+            background-color: #E0EBCF;
+            color: #557A18;
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .project-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .project-card {
+            background-color: white;
+            border: 1px solid #D7E3CE;
+            border-radius: 12px;
+            padding: 15px;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px #D7E3CE;
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 170px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .project-card h3 {
+            color: #31551D;
+            margin-bottom: 8px;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .list-card {
+            background-color: white;
+            border: 1px solid #D7E3CE;
+            border-radius: 12px;
+            padding: 25px;
+        }
+
+        .list-card h2 {
+            color: #31551D;
+            margin-bottom: 15px;
+        }
+
+        .list-card ul {
+            list-style: none;
+        }
+
+        .list-card li {
+            margin-bottom: 10px;
+        }
+
+        .check {
+            color: #668000;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .contact-info {
+            border-left: 2px solid #A3B18A;
+            padding-left: 25px;
+        }
+
+        .contact-info p {
+            margin-bottom: 15px;
+        }
+
+        .contact-link {
+            color: #557A18;
+            text-decoration: none;
+        }
+
+        .contact-link:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: #668344;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+        }
+
+        @media screen and (max-width: 900px) {
+            .about-container {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .about-text {
+                grid-column: 1 / -1;
+            }
+
+            .project-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .skills-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .navbar {
+                justify-content: center;
+            }
+
+            .navbar ul {
+                justify-content: center;
+            }
+
+            .navbar a {
+                display: inline-block;
+                padding: 6px 8px;
+                font-size: 13px;
+            }
+
+            .hero {
+                padding: 40px 6%;
+                text-align: center;
+                gap: 20px;
+            }
+
+            .hero-text h1 {
+                font-size: 28px;
+            }
+
+            .section {
+                padding: 30px 5%;
+            }
+
+            .section-title {
+                font-size: 25px;
+            }
+
+            .about-container,
+            .skills-container,
+            .project-container,
+            .two-column,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .about-text {
+                grid-column: auto;
+            }
+
+            .contact-info {
+                border-left: none;
+                border-top: 2px solid #A3B18A;
+                padding: 20px 0 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">My Portfolio</div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#achievements">Achievements</a></li>
+            <li><a href="#goals">Goals</a></li>
+            <li><a href="#contact">Contact Me</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero" id="home">
+
+        <img src="profile.jpg" alt="Zyrah's Profile Picture">
+
+        <div class="hero-text">
+            <p><b>HELLO, I'M</b></p>
+
+            <h1>Zyrah Angeline Grace Yap</h1>
+
+            <h3>Associate in Computer Technology (ACT)</h3>
+
+            <p>Datamex College of Saint Adeline</p>
+
+            <p class="tagline">
+                "Try and try until you succeed."
+            </p>
+
+            <a href="#about" class="btn">Explore My Portfolio</a>
+        </div>
+
+    </section>
+
+    <section class="section white-section" id="about">
+
+        <h2 class="section-title">About Me</h2>
+
+        <div class="about-container">
+
+            <div class="about-text">
+                <p>
+                    My name is Zyrah Angeline Grace Yap. I'm 1/4 Chinese.
+                    I am currently studying Associate in Computer
+                    Technology at Datamex College of Saint Adeline.
+                    I want to improve my knowledge and skills
+                    in computers and programming. 
+                </p>
+
+                <br>
+
+                <p>
+                    <b>Course:</b> Associate in Computer Technology (ACT)
+                </p>
+
+                <p>
+                    <b>School:</b> Datamex College of Saint Adeline
+                </p>
+            </div>
+
+            <div class="info-card">
+                <h3>My Hobbies</h3>
+
+                <ul class="details">
+                    <li>Playing volleyball and Badminton</li>
+                    <li>Listening to music</li>
+                    <li>Watching Thai series</li>
+                    <li>Spending time with family and friends</li>
+                </ul>
+            </div>
+
+            <div class="info-card">
+                <h3>My Interests</h3>
+
+                <ul class="details">
+                    <li>Listening to Music</li>
+                    <li>Taking Pictures</li>
+                    <li>Playing online games</li>
+                    <li>Traveling and exploring new places</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="section light-section" id="skills">
+
+        <h2 class="section-title">My Skills</h2>
+
+        <br>
+
+        <div class="skills-container">
+
+            <div class="skill-card">
+                <div class="skill-icon">HTML</div>
+                <h3>HTML</h3>
+                <p>Basic webpage structure</p>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">CSS</div>
+                <h3>CSS</h3>
+                <p>Basic webpage styling</p>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">Py</div>
+                <h3>Python</h3>
+                <p>Basic Python programming</p>
+            </div>
+
+             <div class="skill-card">
+                <div class="skill-icon">Will</div>
+                <h3>Will</h3>
+                <p>Willingness to Learn</p>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">Tw</div>
+                <h3>Tw</h3>
+                <p>Teamwork</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="section white-section" id="projects">
+
+        <h2 class="section-title">My Projects</h2>
+
+        <div class="project-container">
+
+            <div class="project-card">
+                <img src="project1.png" alt="Personal Portfolio Project">
+
+                <h3>Personal Portfolio</h3>
+
+                <p>
+                    A personal website that introduces myself,
+                    my skills, hobbies, and goals.
+                </p>
+            </div>
+
+            <div class="project-card">
+                <img src="project2.jpg" alt="Food Ordering System Project">
+
+                <h3>Food Ordering System</h3>
+
+                <p>
+                    A simple Python program for adding, viewing,
+                    searching, and managing food information.
+                </p>
+            </div>
+
+            <div class="project-card">
+                <img src="project3.jpg" alt="Gown Rental System Project">
+
+                <h3>Gown Rental System</h3>
+
+                <p>
+                    A school project designed to help manage
+                    gown rentals, customer records, and returns.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="section light-section">
+
+        <div class="two-column">
+
+            <div class="list-card" id="achievements">
+
+                <h2>My Achievements</h2>
+
+                <ul>
+                    <li><span class="check">•</span>
+                        Completed school programming activities.
+                    </li>
+
+                    <li><span class="check">•</span>
+                        Learned the basics of HTML and CSS.
+                    </li>
+
+                    <li><span class="check">•</span>
+                        Basic Python Programming.
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <div class="list-card" id="goals">
+
+                <h2>My Goals</h2>
+
+                <h3>Short-Term Goals</h3>
+
+                <ul>
+                    <li><span class="check">•</span>
+                        Improve my programming skills.
+                    </li>
+
+                    <li><span class="check">•</span>
+                        To become more confident in speaking in front of others.
+                    </li>
+
+                    <li><span class="check">•</span>
+                        To learn new skills related to Information Technology..
+                    </li>
+                </ul>
+
+                <br>
+
+                <h3>Long-Term Goals</h3>
+
+                <ul>
+                    <li><span class="check">•</span>
+                        My goal in life is to finish my studies, graduate from college, 
+                        and find a stable job related to my course.
+                        I want to improve my skills, become independent, and help my family financially. 
+                        I also dream of traveling to different countries, learning about different cultures, and experiencing new things. 
+                        Most importantly, I want to become a successful person and make my family proud.
+                </ul>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section class="section white-section" id="contact">
+
+        <h2 class="section-title">Contact Me</h2>
+
+            <div class="contact-info">
+
+                <p>
+                    <b>Email</b><br>
+
+                    <a class="contact-link"
+                       href="mailto:zyrahangelinegracey@email.com">
+                        zyrahangelinegracey@email.com
+                    </a>
+                </p>
+
+                <p>
+                    <b>Facebook</b><br>
+
+                    <a class="contact-link"
+                       href="https://www.facebook.com/share/1JEuyvoFFG/"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        Click this to visit my Facebook.
+                    </a>
+                </p>
+
+                <p>
+                    
+                    <b>Instagram</b><br>
+
+                    <a class="contact-link"
+                       href="https://www.instagram.com/zyrhyp?cplk=a2c2dTcwZXJvdnU5"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        Click this to visit my Instagram.
+                    </a>
+                </p>
+
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>
+            Zyrah Angeline Grace C. Yap.
+        </p>
+
+        <p>
+            My Personal Portfolio
+        </p>
+    </footer>
+
+</body>
+</html>
